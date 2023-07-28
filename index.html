@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="styles.css">
+<head>
+    <title>Seçenek Karşılaştırma</title>
+</head>
+<body>
+    <div class="container">
+        <div class="options">
+            <h2>Kaç Adet Flörtünüz var?</h2>
+            <input id="numOptions" type="number" min="2">
+            <button id="submitOptions" onclick="submitOptions()">Devam Et</button>
+            <div id="optionsNames"></div>
+            <p id="optionsError" class="error"></p>
+        </div>
+
+        <div class="criteria" style="display: none;">
+            <h2>Partner seçiminde kaç adet kritere bakarsınız?</h2>
+            <input id="numCriteria" type="number" min="1">
+            <button id="submitCriteria" onclick="submitCriteria()">Devam Et</button>
+            <div id="criteriaNames"></div>
+            <p id="criteriaError" class="error"></p>
+            <button onclick="backFromCriteria()">Geri</button>
+        </div>
+
+        <div class="scores" style="display: none;">
+            <h2>Flörtlerinizin kriterlerinize uygunluğunu puanlayın (1-10 arası):</h2>
+            <div id="scoresInput"></div>
+            <button id="calculateButton" onclick="calculateScores()">Hesapla</button>
+            <p id="scoresError" class="error"></p>
+            <button onclick="backFromScores()">Geri</button>
+        </div>
+
+        <div class="result" style="display: none;">
+            <h2>En uygun seçeneğiniz:</h2>
+            <p id="resultText"></p>
+            <button id="editButton" onclick="enableInputs()" style="display: none;">Değerleri Yenile</button>
+            <table id="resultTable">
+                <tr>
+                    <th>Seçenek</th>
+                    <th>Skor (%)</th>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
